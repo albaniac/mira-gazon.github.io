@@ -1,0 +1,10 @@
+User-agent: * 
+Sitemap:http://mira-svet.com.ua/sitemap.xml 
+User-agent: Yandex 
+Disallow: /admin
+Disallow: /ing
+Host: http://mira-svet.com.ua/ 
+
+User-agent: Googlebot
+Disallow: /admin
+Disallow: /ing
