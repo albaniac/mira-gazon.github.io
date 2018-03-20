@@ -11,9 +11,12 @@
     <link rel="icon" href="wp-content/themes/gazon/img/favicon.jpg" type="image/x-icon" />
     <link rel="shortcut icon" href="wp-content/themes/gazon/img/favicon.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="wp-content/themes/gazon/style.css" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel='stylesheet' id='bootstrap-css-css' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css?ver=3.9.8' type='text/css' media='all' />
-    <script type='text/javascript' src='wp-includes/js/jquery/jquery.js?ver=1.11.0'></script>
+    <link rel="stylesheet" href="wp-content/themes/gazon/bxslider/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <script src="wp-content/themes/gazon/lightbox/js/lightbox.min.js"></script>
+    <link href="wp-content/themes/gazon/lightbox/css/lightbox.css" rel="stylesheet" />
     <script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
     <script type='text/javascript' src='wp-content/themes/gazon/js/app.js?ver=3.9.8'></script>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
@@ -28,11 +31,22 @@
     <script src='js/referer.js' type='text/javascript'></script>
     <!-- <script src='http://maya.armycaps.ru/prototype.js' type='text/javascript'></script> -->
     <script src="wp-content/themes/gazon/js/prototype.js"></script>
+    <script src="wp-content/themes/gazon/bxslider/jquery.bxslider.min.js"></script>
     <script>
         jQuery(function($) {
             jQuery.mask.definitions['h'] = "[A-Fa-f0-9.]";
             jQuery('input[name="phoneOrderItem"], input[name="phoneOrder"]').mask('+38 (999) 999-99-99');
         });
+        jQuery(document).ready(function(){
+                jQuery('.bxslider').bxSlider({
+                    slideWidth: 410,
+                    minSlides: 2,
+                    maxSlides: 2,
+                    moveSlides: 3,
+                    pager: false,
+                    captions: true
+                });
+              });
     </script>
 
 </head>
@@ -49,29 +63,31 @@ ga('create', 'UA-96876511-1', 'auto');
 ga('send', 'pageview');
 
 </script>
-<div class="">
-  <ul class="main-menu">
-    <li><a href="#">Главная</a></li>
-    <li><a href="#why-we">Почему мы?</a></li>
-    <li><a href="http://mira-gazon.com/">Рулонный газон</a></li>
-    <li><a href="#equipment">Оборудование</a></li>
-    <li><a href="#our-work">Наши работы</a></li>
-    <li><a href="#comments">Отзывы</a></li>
-    <li><a href="#contacts">Контакты</a></li>
-    <li><a href="#modal-window"> Обратная связь</a></li>
-  </ul>
-</div>
+
     <div class="wrapper">
         <header>
+                <input type="checkbox" id="mobile-menu">
+                <label for="mobile-menu" class="burger-menu" >Меню</label>
+                <ul class="main-menu">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#why-we">Почему мы?</a></li>
+                    <li><a href="http://mira-gazon.com/">Рулонный газон</a></li>
+                    <li><a href="#equipment">Оборудование</a></li>
+                    <li><a href="#our-work">Наши работы</a></li>
+                    <li><a href="#comments">Отзывы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#modal-window"> Обратная связь</a></li>
+                </ul>
+
             <div class="wrap-header clearfix">
                 <hgroup>
-                    <h1 class="site-title"><a href="" title="Mira" rel="home">Mira</a></h1>
+                    <div class="site-title"><a href="" title="Mira" rel="home">Mira</a></div>
                     <h2 class="site-description">Устройство автоматического полива в Киеве и Киевской области
 </h2>
                 </hgroup>
 
                 <div class="main-clause">
-                    <h3>АВТОМАТИЧЕСКИЙ ПОЛИВ</h3>
+                    <h1>АВТОМАТИЧЕСКИЙ ПОЛИВ</h1>
                     <p>Экономия времени и денег с нашим поливом. Откажитесь от полива руками! </p>
 
                 </div>
@@ -81,10 +97,7 @@ ga('send', 'pageview');
                     <div class="textwidget">
                         <p>Звоните:<br />
 
-                            <div class="textwidget">
-                                <p>38(098)660-89-78<br /> 38(093)672-89-72
-                                    <br>38(095)172-95-05</p>
-                            </div>
+                            <div class="textwidget iphone-numbers"><a href="tel:+380986608978">+38098 660-89-78</a><a href="tel:+380936728972">+38093 672-89-72</a><a href="tel:+380951729505">+38095 172-95-05</a></div>
                             Пн-Вс с 9.00-21.00<br />
                             <p>mira-gazon@i.ua</p>
                             <img src="wp-content/uploads/2014/04/warranty.png" alt="38(098)660-89-78" title="38(098)660-89-78" /></p>
@@ -95,8 +108,8 @@ ga('send', 'pageview');
                 <div class="zakaji-seichas clearfix">
                     <p>Закажите устройство полива сейчас и получите скидку 10%  <span>в подарок</span></p>
 
-                    <a href="javascript:;" class="left-list-white-down">Листайте вниз</a>
-                    <a href="javascript:;" class="right-list-white-down">Листайте вниз</a>
+<!--                     <a href="javascript:;" class="left-list-white-down">Листайте вниз</a>
+                    <a href="javascript:;" class="right-list-white-down">Листайте вниз</a> -->
                 </div>
 
                 <div class="action-left">
@@ -165,13 +178,14 @@ ga('send', 'pageview');
     </div>
     <img src="wp-content/themes/gazon/img/iyEGmcHS018.jpg" class="photo-landscape-design" alt="">
     <div id="content">
-        <div class="right-list-super-cont">
+<!--         <div class="right-list-super-cont">
             <a href="javascript:;" class="right-list-green-up"><img src="wp-content/themes/gazon/img/list-arrow-up.png" alt="Звоните нам по поводу и без" /></a>
-        </div>
+        </div> -->
         <div class="text" id="why-we">
             <p>8 причин <span>работать</span> с нами</p>
         </div>
         <div class="image">
+            <div class="advantages">
             <div class="box sid1"><span>1.</span>
 
                 <div class="seven">7 лет на рынке</div>
@@ -205,15 +219,15 @@ ga('send', 'pageview');
 
                 <div class="seven">100% гарантия от производителя</div>
             </div>
-
+            </div>
             <div id="field">
-                <div class="right-list-super-cont">
-                    <a href="javascript:;" class="right-list-green-up"><img src="wp-content/themes/gazon/img/list-arrow-up.png" alt="Звоните нам по поводу и без" /></a>
+<!--                 <div class="right-list-super-cont">
+                    <a href="javascript:;" class="right-list-green-up"><img src="wp-content/themes/gazon/img/list-arrow-up.png" alt="Звоните нам по поводу и без" /></a> -->
                 </div>
-
                 <div class="text">
                     <p>Наше оборудование</p>
                 </div>
+                <div class="ours-fields">
                 <div>
                     <a href="wp-content/themes/gazon/img/ourfield/1_b.jpg" title="Роторный дождеватель" class="fnbox"><img src="wp-content/themes/gazon/img/ourfield/preview/1.jpg" alt="" /></a>
 
@@ -244,6 +258,7 @@ ga('send', 'pageview');
 
                     <div>Капельный полив</div>
                 </div>
+            </div>
             </div>
 
 
@@ -378,6 +393,7 @@ ga('send', 'pageview');
                 <span class="small-bottom">Заказать</span>
 
             </div>
+            <div class="w-100"></div>
             <div id="gazprice-box-3">
                 <h2>IRRITEC(ITALIA) </h2><img class=".border-gazprice-box-3" src="wp-content/themes/gazon/img/pricefieldpoliv/yoTbyHea0VA.jpg" width="235" height="152" alt="" />
 
@@ -483,7 +499,7 @@ ga('send', 'pageview');
             <p class="com">Услуги и Цены:</p>
         </div>
         <br><br>
-
+        <div class="container-grunt">
         <div class="grunt gid1">
             <div class="block-8">
             </div>
@@ -541,85 +557,31 @@ ga('send', 'pageview');
             </div>
         </div>
     </div>
+    </div>
     <div class="wood" id="our-work">
         <div id="gallery">
             <div class="text2">
                 <p class="com">Наши работы</p>
             </div>
-            <ul>
-                <li>
-                    <a href="wp-content/themes/gazon/img/gallery/1-1_b.jpg" title="Киевская область, с. Лисники" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/1-1_s.jpg" alt="" />
-                    </a>
-                    <a href="wp-content/themes/gazon/img/gallery/1-2_b.jpg" title="Киевская область, с. Лисники" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/1-2_s.jpg" alt="" />
-                    </a>
+                        <div class="bxslider"> 
+              <div><a class="example-image-link" href="wp-content/themes/gazon/img/gallery/1-1.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/1-1.jpg" title="Киевская область, с. Лисники   До..." /></a></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/1-2.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/1-2.jpg" title="После..." /></a></div>
 
-                    <div class="descript">
-                        <span>Киевская область, с. Лисники</span><span>До...</span><span>После...</span></div>
-                </li>
+              <div><a class="example-image-link" href="wp-content/themes/gazon/img/gallery/2-2.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/2-2.jpg" title="Киевская область, г.Козин До..." /></a></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/2-1.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/2-1.jpg" title="После..." /></a></div>
 
-                <li>
-                    <a href="wp-content/themes/gazon/img/gallery/2-2_b.jpg" title="Киевская область, г.Козин" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/2-2_s.jpg" alt="" />
-                    </a>
-                    <a href="wp-content/themes/gazon/img/gallery/2-1_b.jpg" title="Киевская область, г.Козин" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/2-1_s.jpg" alt="" />
-                    </a>
+              <div><a href="wp-content/themes/gazon/img/gallery/3-1_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/3-1_b.jpg" title="г. Киев, кооператив «Чернобылец 2005»   До..." /></a></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/3-2_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/3-2_b.jpg" title="После..." /></a></div>
 
-                    <div class="descript"><span>Киевская область, г.Козин</span><span>До...</span><span>После...</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="wp-content/themes/gazon/img/gallery/3-1_b.jpg" title="г. Киев, кооператив «Чернобылец 2005»" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/3-1_s.jpg" width="410" height="305" alt="" />
-                    </a>
-                    <a href="wp-content/themes/gazon/img/gallery/3-2_b.jpg" title="г. Киев, кооператив «Чернобылец 2005»" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/3-2_s.jpg" width="410" height="305" alt="" />
-                    </a>
+              <div><a href="wp-content/themes/gazon/img/gallery/4-1_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/4-1_b.jpg" title="Киевская область, с. Подгорци." /></a></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/4-2_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/4-2_b.jpg" title=" " /></a></div>
 
-                    <div class="descript"><span>г. Киев, кооператив «Чернобылец 2005»</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="wp-content/themes/gazon/img/gallery/4-1_b.jpg" title="Киевская область, с. Подгорци." class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/4-1_s.jpg" width="410" height="305" alt="" />
-                    </a>
-                    <a href="wp-content/themes/gazon/img/gallery/4-2_b.jpg" title="Киевская область, с. Подгорци." class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/4-2_s.jpg" width="410" height="305" alt="" />
-                    </a>
+              <div><a href="wp-content/themes/gazon/img/gallery/8-2_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/8-2_b.jpg" title="Киевская область, с. Княжичи" /></a></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/8-1_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/8-1_b.jpg" title=" " /></a></div>
 
-                    <div class="descript"><span>Киевская область, с. Подгорци.</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="wp-content/themes/gazon/img/gallery/8-2_b.jpg" title="Киевская область, с. Княжичи" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/8-2_s.jpg" width="410" height="305" alt="" />
-                    </a>
-                    <a href="wp-content/themes/gazon/img/gallery/8-1_b.jpg" title="Киевская область, с. Княжичи" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/8-1_s.jpg" width="410" height="305" alt="" />
-                    </a>
-
-
-                    <div class="descript"><span>Киевская область, с. Княжичи</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="wp-content/themes/gazon/img/gallery/6-1_b.jpg" title="г.Киев район м. Славутичь" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/6-1_s.jpg" alt="" />
-                    </a>
-                    <a href="wp-content/themes/gazon/img/gallery/6-2_b.jpg" title="г.Киев район м. Славутичь" class="fnbox">
-                        <img src="wp-content/themes/gazon/img/gallery/6-2_s.jpg" alt="" />
-                    </a>
-
-                    <div class="descript"><span>г.Киев район м. Славутичь</span><span>До...</span><span>После...</span>
-                    </div>
-                </li>
-
-
-            </ul>
-            <div id="galleft"></div>
-            <div id="galright"></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/6-1_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/6-1_b.jpg" title="г.Киев район м. Славутичь   До..." /></a></div>
+              <div><a href="wp-content/themes/gazon/img/gallery/6-2_b.jpg" rel="lightbox" data-lightbox="example-set"><img src="wp-content/themes/gazon/img/gallery/6-2_b.jpg" title="После..." /></a></div>
+            </div>
         </div>
     </div>
     <div id="teni">
@@ -710,10 +672,7 @@ ga('send', 'pageview');
     </div>
 
     <div id="akcia">
-        <div class="reclama">
-            <div class="textwidget">
-            </div>
-        </div>
+
         <div class="action-left">
             <div class="textwidget">
                 <div class="time-action">
@@ -767,11 +726,15 @@ ga('send', 'pageview');
                 });
             </script>
         </div>
+        <div class="reclama">
+            <div class="textwidget">
+            </div>
+        </div>
     </div>
     <footer>
         <div class="wrap-header clearfix">
             <hgroup>
-                <h1 class="site-title"><a href="" title="Mira" rel="home">Mira</a></h1>
+                <div class="site-title"><a href="" title="Mira" rel="home">Mira</a></div>
                 <h2 class="site-description">Устройство автоматического полива под ключ  в Киеве, Киевской области</h2>
             </hgroup>
 
@@ -785,10 +748,7 @@ ga('send', 'pageview');
                 <div class="textwidget">
                     <p> Есть вопросы? Звоните!</p>
                     <div class="textwidget">
-                      <p class="iphone-numbers">38(098)660-89-78
-                          38(093)672-89-72
-                          38(095)172-95-05
-                        mira-gazon@i.ua</p>
+                      <div class="iphone-numbers"><div class="phone-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 512 512"><path d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z"/></svg></div><a href="tel:+380986608978">+38098 660-89-78</a><a href="tel:+380936728972">+38093 672-89-72</a><a href="tel:+380951729505">+38095 172-95-05</a>mira-gazon@i.ua</div>
                     </div>
                     <p class="time">Пн-Вс с 9.00-21.00</p>
 

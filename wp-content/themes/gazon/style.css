@@ -83,6 +83,15 @@ hgroup{
   color: #ffffff;
   text-decoration: none;
 }
+#mobile-menu:checked ~ .burger-menu{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 1px solid #000;
+    border-radius: 35px;
+    padding: 10px 0;
+    background: linear-gradient(to bottom, #60e06f , #40b74e);
+}
 .main-menu li:hover {
   display: inline-block;
   padding: 5px 0 0 0;
@@ -599,12 +608,11 @@ hgroup{
 .text2 {
     padding: 50px 0;
     text-align: center;
-
     line-height: 50px;
     font-family:'exo_2.0extra_bold_italic';
 }
 /*#gazonprice .text2 {}*/
-#content .text2 {max-width:1052px}
+/*#content .text2 {max-width:1052px}*/
 
 
 
@@ -637,7 +645,7 @@ hgroup{
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     max-width: 1200px;
     padding: 0 0 0 97px;
 }
@@ -1457,12 +1465,12 @@ hgroup{
     padding: 0 0 0 170px;
 }
 #otzivi-bg {
-    background:url(img/trava-otzivi.png) no-repeat;
+    background:url(img/trava-otzivi.png) repeat;
     width: 100%;
     height: 100%;
 }
 .otzivi {
-    height: 514px;
+    height: auto;
     max-width:1192px;
     margin: 0 auto;
     display: flex;
@@ -1622,11 +1630,45 @@ footer .site-description {
   text-decoration: none;
   color: #fff;
   white-space: pre;
+  position: relative;
+  max-width: 250px;
+}
+
+.phone-icon{
+    width: 50px;
+    transform: rotate(130deg) translate(-70%, 30%);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    animation: phone-icon 1s linear infinite;
+}
+
+@keyframes phone-icon{
+    25% { transform: rotate(135deg) translate(-65%, 30%); }
+    50% { transform: rotate(130deg) translate(-70%, 30%);}
+    75% { transform: rotate(125deg) translate(-75%, 30%);}
+    100% { transform: rotate(130deg) translate(-70%, 30%);}
+
+}
+
+.iphone-numbers a,
+.iphone-numbers a:hover,
+.iphone-numbers a:active,
+.iphone-numbers a:focus{
+  text-decoration: none;
+  color: #fff;
+  white-space: pre;
+  margin-top: 0!important;
+  display: block;
+}
+.phone-header .iphone-numbers a{
+    color: #3d5200;
 }
 
 .time {
     font-size:12px;
     text-shadow: none;
+    width: 250px;
 }
 
 
@@ -1679,6 +1721,12 @@ footer .site-description {
 /*    #field .right-list-green-up{
         display: block!important;
     }*/
+    .phone-icon{
+        left: 0;
+    }
+    .photo-landscape-design{
+        display: none;
+    }
     .burger-menu{
         text-align: center;
         display: block;
@@ -1689,12 +1737,26 @@ footer .site-description {
     }
     .main-menu{
         display: none;
-        margin-top: 30px;
+        margin-top: 50px;
         opacity: 1;
         height: 0;
     }
-    .main-menu li{
+    .main-menu li,
+    .main-menu li:hover{
         display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-bottom: 1px solid #000;
+        border-radius: 35px;
+        padding: 10px 0;
+        background: linear-gradient(to bottom, #8bf998, #40b74e);
+        opacity: .9;
+    }
+    .main-menu li a{
+        z-index: 9999;
+    }
+    .main-menu li:active {
+        display: none;
     }
     hgroup{
         float: none;
@@ -1718,6 +1780,7 @@ footer .site-description {
         float: left;
         width: 420px;
     }
+    #akcia .action-left,
     .action-left{
         width: 40%;
         height: 330px;
@@ -1727,6 +1790,7 @@ footer .site-description {
         text-align: center;
         margin: 0 auto;
     }
+
     #content .text{
         text-align: center;
     }
@@ -1780,8 +1844,11 @@ footer .site-description {
     .ours-fields img:not(#zoom){
         width: 100%;
     }
-    .textwidget{
-        color: #fff;
+    .reclama{
+        background-position: center center;
+    }
+    .phone-icon{
+        left: -25px;
     }
 }
 
@@ -1791,6 +1858,10 @@ footer .site-description {
     }
     hgroup{
         margin: 0 auto;
+    }
+    .textwidget a,
+    .textwidget{
+        color: #fff!important;
     }
     .main-clause{
         margin: 5px auto;
@@ -1836,14 +1907,30 @@ footer .site-description {
     .spec{
         padding: 0!important;
     }
+    .phone-icon{
+        left: -10px;
+    }
 }
 
 @media screen and (max-width: 480px){
+    #content .text p{
+        font-size: 40px;
+    }
+    .main-clause h1{
+        font-size: 30px;
+    }
+
     .text-otziv {
     margin: 8px;
     line-height: 18px;
     padding: 20px;
     background: #fff;
     font-family: 'Open Sans';
+    }
+    .iphone-numbers a,
+    .iphone-numbers a:hover,
+    .iphone-numbers a:active,
+    .iphone-numbers a:focus{
+    font-size: 17px;
     }
 }
